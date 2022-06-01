@@ -8,15 +8,16 @@
 </template>
 
 <script>
+import parts from '../Data/parts';
+
 export default {
   name: 'PartInfo',
-  data() {
-    return {
-      part: {
-        title: 'Part Title',
-        description: 'Part Description',
-      },
-    };
+  computed: {
+    part() {
+      const { partType, id } = this.$route.params;
+      // eslint-disable-next-line arrow-parens
+      return parts[partType].find(part => part.id === +id);
+    },
   },
 };
 </script>
