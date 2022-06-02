@@ -15,10 +15,17 @@ export default createStore({
     },
   },
   actions: {
+    // get parts from API
     getParts({ commit }) {
       axios.get('/api/parts')
         .then((result) => commit('updateParts', result.data))
         .catch(console.error);
+    },
+    // add robot to cart to API
+    addRobotToCart({ commit, state }, robot) {
+      const cart = [...state.cart, robot];
+      axios.post('/api/cart', cart)
+        .then(() => commit('addRobotToCart', robot));
     },
   },
   getters: {
