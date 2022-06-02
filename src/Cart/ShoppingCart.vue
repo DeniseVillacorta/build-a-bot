@@ -23,7 +23,7 @@
         </tr>
       </tbody>
     </table>
-    <h2 class="saleItems">You save money on theses robots: </h2>
+    <h2 class="saleItems">You save money on these robots: </h2>
     <table>
       <thead>
         <tr>

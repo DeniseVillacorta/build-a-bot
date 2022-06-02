@@ -24,7 +24,7 @@ export default createStore({
     // add robot to cart to API
     addRobotToCart({ commit, state }, robot) {
       const cart = [...state.cart, robot];
-      axios.post('/api/cart', cart)
+      return axios.post('/api/cart', cart)
         .then(() => commit('addRobotToCart', robot));
     },
   },
